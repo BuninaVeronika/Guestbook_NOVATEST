@@ -107,13 +107,15 @@ for($r=0; $r<$public_user; $r++){
  $array_user=mysqli_fetch_assoc($user);
  $login=$array_user["login"];
  if($id_user==$id_user_note || $role==1){
+
+ $class_id='class_'.$r;	
 print<<<note
 <h3>$login</h3><br>
-<form id='class_$i'>
+<form id='$class_id'>
 <input style='display:none;' type="text" name="id_note" value='$id_note'>
 <input type="text" name="text" placeholder="Текст записи" value='$text'>
 <p style='float:right;'>$datatime</p>
-<input type="button" value='Редактировать' class='red' att='class_$i'>
+<input type="button" value='Редактировать' class='red' att='$class_id'>
 <input type="button" value='Удалить' alt='$id_note' class='del'>
 </form>
 <hr>
